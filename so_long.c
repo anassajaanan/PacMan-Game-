@@ -6,11 +6,32 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/26 18:05:04 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:34:13 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	handle_keypress(int keycode, t_params *params)
+{
+	if (keycode == 53)
+	{
+		mlx_destroy_window(params->mlx, params->win);
+		exit(0);
+	}
+	else if (keycode == 13)
+		move_player_up(params);
+	else if (keycode == 0)
+		move_player_left(params);
+	else if (keycode == 1)
+		move_player_down(params);
+	else if (keycode == 2)
+		move_player_right(params);		
+
+
+		
+	return (0);
+}
 
 int	update_window(t_params *params)
 {
@@ -38,6 +59,7 @@ int main(void)
 	init_ghosts(&params);
 	parse_map_data(&params);
 	
+	mlx_hook(params.win, 2, 1L<<0, handle_keypress, &params);
 	mlx_loop_hook(params.mlx, update_window, &params);
 	mlx_loop(params.mlx);
 	return (0);

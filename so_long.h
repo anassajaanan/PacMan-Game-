@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/26 18:02:54 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:33:02 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,13 @@ void	draw_images(t_params *params);
 
 // parsing.c
 void	parse_map_data(t_params *params);
+
+// mouvements.c
+int		is_valid_mov(t_params *params, int row, int col);
+void	move_player_up(t_params *params);
+void	move_player_left(t_params *params);
+void	move_player_down(t_params *params);
+void	move_player_right(t_params *params);
+
 
 #endif // SO_LONG_H
