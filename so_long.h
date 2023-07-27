@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 07:35:30 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 07:43:31 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,7 @@ void	move_player_left(t_params *params);
 void	move_player_down(t_params *params);
 void	move_player_right(t_params *params);
 
+// ghost_movement.c
+void	move_pink_ghost(t_params *params);
 
 #endif // SO_LONG_H
