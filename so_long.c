@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 08:14:21 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 10:00:15 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ int	update_window(t_params *params)
 	draw_ghosts(params);
 	move_pink_ghost(params);
 	move_yellow_ghost(params);
+	move_blue_ghost(params);
 	move_red_ghost(params);
+	
 	return (0);
 }
 

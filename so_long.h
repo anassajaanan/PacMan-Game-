@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 08:30:44 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 09:58:55 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,25 @@ void	move_player_right(t_params *params);
 // ghost_movement.c
 void	move_pink_ghost(t_params *params);
 void	move_yellow_ghost(t_params *params);
+
+// red_ghost_movement.c
+int		choose_valid_direction_red(t_params *params, int new_col, int new_row, int direction);
+void	move_red_ghost_random(t_params *params);
+void	move_red_ghost_continue(t_params *params);
 void	move_red_ghost(t_params *params);
+
+// blue_ghost_movement.c
+int		choose_valid_direction_blue(t_params *params, int new_col, int new_row, int direction);
+void	move_blue_ghost_random(t_params *params);
+void	move_blue_ghost_continue(t_params *params);
+void	move_blue_ghost(t_params *params);
+
+
+// ghost_movement_utils.c
+void	shuffle(int *array, int n);
+int		get_opposite_direction(int direction);
+void	get_available_directions(int *available_directions, int direction);
+int		is_valid_move(t_params *params, int row, int col, int direction);
+int		has_multiple_options(t_params *params, int row, int col);
 
 #endif // SO_LONG_H
