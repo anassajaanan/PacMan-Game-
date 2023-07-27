@@ -1,6 +1,6 @@
 NAME = so_long
 
-SRCS = so_long.c player.c ghosts.c fruits.c images.c parsing.c mouvements.c ghost_movement.c \
+SRCS = so_long.c player.c ghosts.c fruits.c images.c parsing.c mouvements.c ghost_movement.c red_ghost_movement.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c
 
