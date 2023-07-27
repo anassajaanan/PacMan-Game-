@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:34:39 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/26 17:40:36 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:47:38 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init_ghosts(t_params *params)
 {
 	params->red.col = 9;
 	params->red.row = 3;
-	params->red.direction = 1;
+	params->red.direction = 0;
 	params->blue.col = 13;
 	params->blue.row = 3;
 	params->blue.direction = 1;

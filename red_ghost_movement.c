@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 07:56:19 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 08:31:31 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 08:53:04 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,49 @@ int has_multiple_options(t_params *params, int row, int col)
 
 void	move_red_ghost_random(t_params *params)
 {
-	int	i;
-	int	new_col;
-	int	new_row;
-	int direction;
+	int i;
+    int new_col;
+    int new_row;
+    int direction;
+    int available_directions[3]; // Array to store available directions (excluding opposite)
+
     int directions[4] = {0, 1, 2, 3};
-    
-	shuffle(directions, 4);
+
+    // Determine the opposite direction of the current direction of the red ghost
+    int opposite_direction;
+    switch (params->red.direction)
+    {
+        case 0: // Up
+            opposite_direction = 2; // Down
+            break;
+        case 1: // Right
+            opposite_direction = 3; // Left
+            break;
+        case 2: // Down
+            opposite_direction = 0; // Up
+            break;
+        case 3: // Left
+            opposite_direction = 1; // Right
+            break;
+    }
+
+    // Create an array of available directions (excluding opposite)
+    int count = 0;
+    for (i = 0; i < 4; i++)
+    {
+        if (directions[i] != opposite_direction)
+        {
+            available_directions[count] = directions[i];
+            count++;
+        }
+    }
+
+    // Now we shuffle the available directions array
+    shuffle(available_directions, 3);
 	i = 0;
-	while (i < 4)
+	while (i < 3)
 	{
-		direction = directions[i];
+		direction = available_directions[i];
 		new_col = params->red.col;
 		new_row = params->red.row;
 		if (direction == 0 && new_row > 0 && params->map_data[new_row - 1][new_col] != '1')
