@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 10:12:39 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:18:12 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ int	handle_keypress(int keycode, t_params *params)
 
 int	update_window(t_params *params)
 {
+	if (params->is_game_over)
+	{
+		mlx_clear_window(params->mlx, params->win);
+		mlx_put_image_to_window(params->mlx, params->win, params->images.game_over, 0, 0);
+		return (0);
+	}
 	mlx_clear_window(params->mlx, params->win);
 	draw_images(params);
 	mlx_put_image_to_window(params->mlx, params->win, params->player.img[params->player.direction], params->player.col * 32, params->player.row * 32);
@@ -55,6 +61,7 @@ int main(void)
 
 	params.mlx = mlx_init();
 	params.win = mlx_new_window(params.mlx, WIN_WIDTH, WIN_HEIGHT, "so_long");
+	params.is_game_over = 0;
 
 
 	init_and_load_player(&params);

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:00:36 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 10:07:24 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:18:47 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,13 @@ void	init_and_load_player(t_params *params)
 void	check_ghost_collision(t_params *params)
 {
 	if (params->player.col == params->red.col && params->player.row == params->red.row)
-	{
-		mlx_destroy_window(params->mlx, params->win);
-		exit(0);
-	}
+		params->is_game_over = 1;
 	if (params->player.col == params->blue.col && params->player.row == params->blue.row)
-	{
-		mlx_destroy_window(params->mlx, params->win);
-		exit(0);
-	}
+		params->is_game_over = 1;
 	if (params->player.col == params->pink.col && params->player.row == params->pink.row)
-	{
-		mlx_destroy_window(params->mlx, params->win);
-		exit(0);
-	}
+		params->is_game_over = 1;
 	if (params->player.col == params->yellow.col && params->player.row == params->yellow.row)
-	{
-		mlx_destroy_window(params->mlx, params->win);
-		exit(0);
-	}
+		params->is_game_over = 1;
 }
 
 void	check_fruit_collision(t_params *params)
