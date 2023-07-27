@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:00:36 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/26 14:06:52 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:38:04 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	init_and_load_player(t_params *params)
 	params->player.row = 1;
 	params->player.moves = 0;
 	params->player.moves = 0;
+	params->player.direction = 3;
 	params->player.img[0] = mlx_xpm_file_to_image(params->mlx, "./textures/player/pac_man0.xpm", &width, &height);
 	params->player.img[1] = mlx_xpm_file_to_image(params->mlx, "./textures/player/pac_man1.xpm", &width, &height);
 	params->player.img[2] = mlx_xpm_file_to_image(params->mlx, "./textures/player/pac_man2.xpm", &width, &height);
