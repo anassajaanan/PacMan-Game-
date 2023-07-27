@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 10:07:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 10:23:31 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_images
 	void	*collectible;
 	void	*exit;
 	void	*empty;
+	void	*img_log;
 }			t_images;
 
 typedef struct s_params
