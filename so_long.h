@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 09:58:55 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 10:07:40 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ typedef struct s_params
 
 // player.c
 void	init_and_load_player(t_params *params);
+void	check_ghost_collision(t_params *params);
+void	check_fruit_collision(t_params *params);
 
 // ghosts.c
 void	init_ghosts(t_params *params);
@@ -89,7 +91,6 @@ void	draw_ghosts(t_params *params);
 // fruits.c
 void	init_and_load_fruits(t_params *params);
 void	draw_fruits(t_params *params);
-void	check_fruit_collision(t_params *params);
 
 // images.c
 void	load_images(t_params *params);

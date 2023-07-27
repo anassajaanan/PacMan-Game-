@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:19:35 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 07:36:01 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 10:12:24 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	move_player_down(t_params *params)
 		mlx_put_image_to_window(params->mlx, params->win, params->player.animation_img, params->player.col * 32, params->player.row * 32);
 		usleep(ANIMATION_DELAY);
 		check_fruit_collision(params);
+		
 	}
 }
 
