@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 11:16:38 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:41:37 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_images
 	void	*empty;
 	void	*img_log;
 	void	*game_over;
+	void	*win;
 }			t_images;
 
 typedef struct s_params
@@ -78,6 +79,7 @@ typedef struct s_params
 	char		*map_data[23];
 	t_images	images;
 	int			is_game_over;
+	int			is_win;
 }				t_params;
 
 

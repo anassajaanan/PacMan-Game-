@@ -6,11 +6,25 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 11:18:12 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:54:53 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	display_score_and_moves(t_params *params)
+{
+	char	*moves;
+	char	*score;
+	
+	moves = ft_strjoin("Moves: ", ft_itoa(params->player.moves));
+	score = ft_strjoin("Score: ", ft_itoa(params->player.score));
+    mlx_string_put(params->mlx, params->win, 100, 20, 0xFFFFFF, moves);
+	mlx_string_put(params->mlx, params->win, 500, 20, 0xFFFFFF, score);
+	
+	free(moves);
+	free(score);
+}
 
 int	handle_keypress(int keycode, t_params *params)
 {
@@ -35,6 +49,12 @@ int	handle_keypress(int keycode, t_params *params)
 
 int	update_window(t_params *params)
 {
+	if (params->player.score>= 5230)
+	{
+		mlx_clear_window(params->mlx, params->win);
+		mlx_put_image_to_window(params->mlx, params->win, params->images.win, 0, 0);
+		return (0);
+	}
 	if (params->is_game_over)
 	{
 		mlx_clear_window(params->mlx, params->win);
@@ -50,8 +70,8 @@ int	update_window(t_params *params)
 	move_yellow_ghost(params);
 	move_blue_ghost(params);
 	move_red_ghost(params);
+	display_score_and_moves(params);
 	check_ghost_collision(params);
-	
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:13:50 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 10:59:28 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:43:11 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	load_images(t_params *params)
 	params->images.empty = mlx_xpm_file_to_image(params->mlx, "./textures/images/empty.xpm", &width, &height);
 	params->images.img_log = mlx_xpm_file_to_image(params->mlx, "./textures/images/42.xpm", &width, &height);
 	params->images.game_over = mlx_xpm_file_to_image(params->mlx, "./textures/images/game_over.xpm", &width, &height);
+	params->images.win = mlx_xpm_file_to_image(params->mlx, "./textures/images/win.xpm", &width, &height);
 }
 
 void	draw_images(t_params *params)
