@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/26 18:33:02 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/27 07:35:30 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	draw_ghosts(t_params *params);
 // fruits.c
 void	init_and_load_fruits(t_params *params);
 void	draw_fruits(t_params *params);
+void	check_fruit_collision(t_params *params);
 
 // images.c
 void	load_images(t_params *params);
