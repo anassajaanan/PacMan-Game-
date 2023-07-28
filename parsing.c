@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:00:39 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/26 18:02:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:34:32 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	parse_map_data(t_params *params)
 	fd = open("./maps/map.ber", O_RDONLY);
 	while ((line = get_next_line(fd)))
 	{
-		params->map_data[i++] = ft_strtrim(line, "\n");
+		params->map.data[i++] = ft_strtrim(line, "\n");
 		free(line);
 	}
 }

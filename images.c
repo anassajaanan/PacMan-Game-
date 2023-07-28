@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:13:50 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 11:43:11 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:33:50 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	draw_images(t_params *params)
 		j = 0;
 		while (j < 23)
 		{
-			if (params->map_data[i][j] == '1')
+			if (params->map.data[i][j] == '1')
 				mlx_put_image_to_window(params->mlx, params->win, params->images.wall, j * 32, i * 32);
-			else if (params->map_data[i][j] == '0')
+			else if (params->map.data[i][j] == '0')
 				mlx_put_image_to_window(params->mlx, params->win, params->images.collectible, j * 32, i * 32);
 			j++;
 		}

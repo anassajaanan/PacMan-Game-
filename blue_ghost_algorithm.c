@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:41:19 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 09:58:42 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:32:40 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	choose_valid_direction_blue(t_params *params, int new_col, int new_row, int direction)
 {
-	if (direction == 0 && new_row > 0 && params->map_data[new_row - 1][new_col] != '1')
+	if (direction == 0 && new_row > 0 && params->map.data[new_row - 1][new_col] != '1')
 		new_row--;
-	else if (direction == 1 && new_col < 22 && params->map_data[new_row][new_col + 1] != '1')
+	else if (direction == 1 && new_col < 22 && params->map.data[new_row][new_col + 1] != '1')
 		new_col++;
-	else if (direction == 2 && new_row < 22 && params->map_data[new_row + 1][new_col] != '1')
+	else if (direction == 2 && new_row < 22 && params->map.data[new_row + 1][new_col] != '1')
 		new_row++;
-	else if (direction == 3 && new_col > 0 && params->map_data[new_row][new_col - 1] != '1')
+	else if (direction == 3 && new_col > 0 && params->map.data[new_row][new_col - 1] != '1')
 		new_col--;
 	if (new_col != params->blue.col || new_row != params->blue.row)
 	{
@@ -61,13 +61,13 @@ void	move_blue_ghost_continue(t_params *params)
 
 	new_col = params->blue.col;
 	new_row = params->blue.row;
-	if (params->blue.direction == 0 && new_row > 0 && params->map_data[new_row - 1][new_col] != '1')
+	if (params->blue.direction == 0 && new_row > 0 && params->map.data[new_row - 1][new_col] != '1')
 		new_row--;
-	else if (params->blue.direction == 1 && new_col < 22 && params->map_data[new_row][new_col + 1] != '1')
+	else if (params->blue.direction == 1 && new_col < 22 && params->map.data[new_row][new_col + 1] != '1')
 		new_col++;
-	else if (params->blue.direction == 2 && new_row < 22 && params->map_data[new_row + 1][new_col] != '1')
+	else if (params->blue.direction == 2 && new_row < 22 && params->map.data[new_row + 1][new_col] != '1')
 		new_row++;
-	else if (params->blue.direction == 3 && new_col > 0 && params->map_data[new_row][new_col - 1] != '1')
+	else if (params->blue.direction == 3 && new_col > 0 && params->map.data[new_row][new_col - 1] != '1')
 		new_col--;
 	params->blue.row = new_row;
 	params->blue.col = new_col;

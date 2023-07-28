@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 11:41:37 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/28 17:32:36 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ typedef struct s_player
 	int		direction;
 }			t_player;
 
+typedef struct s_exit
+{
+	int col;
+	int row;
+}       t_exit;
+
 typedef struct s_ghost
 {
 	int		col;
@@ -63,24 +69,47 @@ typedef struct s_images
 	void	*win;
 }			t_images;
 
+typedef struct s_map
+{
+	int         rows;
+	int         cols;
+	char        **data;
+	int			collectibles;
+	t_exit		target;
+}				t_map;
+
+struct s_line_queue_node
+{
+	char						*val;
+	struct s_line_queue_node	*next;
+};
+
+typedef struct s_line_queue
+{
+	struct s_line_queue_node	*front;
+	struct s_line_queue_node	*rear;
+}								t_line_queue;
+
 typedef struct s_params
 {
-	void		*mlx;
-	void		*win;
-	t_player	player;
-	t_ghost		red;
-	t_ghost		blue;
-	t_ghost		yellow;
-	t_ghost		pink;
-	t_fruit		apple;
-	t_fruit		orange;
-	t_fruit		cherry;
-	t_fruit		strawberry;
-	char		*map_data[23];
-	t_images	images;
-	int			is_game_over;
-	int			is_win;
-}				t_params;
+	void			*mlx;
+	void			*win;
+	t_map			map;
+	t_line_queue	q;
+	t_player		player;
+	t_exit			exit;
+	t_ghost			red;
+	t_ghost			blue;
+	t_ghost			yellow;
+	t_ghost			pink;
+	t_fruit			apple;
+	t_fruit			orange;
+	t_fruit			cherry;
+	t_fruit			strawberry;
+	t_images		images;
+	int				is_game_over;
+	int				is_win;
+}					t_params;
 
 
 // player.c
@@ -134,5 +163,39 @@ int		get_opposite_direction(int direction);
 void	get_available_directions(int *available_directions, int direction);
 int		is_valid_move(t_params *params, int row, int col, int direction);
 int		has_multiple_options(t_params *params, int row, int col);
+
+// line_queue.c
+void	init_line_queue(t_line_queue *q);
+void	enqueue_line(t_line_queue *q, char *line);
+char	*dequeue_line(t_line_queue *q);
+int		line_queue_is_empty(t_line_queue *q);
+int     line_queue_size(t_line_queue *q);
+
+// map_validator.c
+int is_valid_character(char c);
+int count_charcters(t_map *map, char c);
+int is_valid_map_format(t_map *map);
+int is_valid_map(t_map *map);
+int has_duplicates(t_map *map);
+int is_map_rectangular(t_map *map);
+int is_row_only_walls(char *row);
+int is_map_closed_by_walls(t_map *map);
+int	has_valid_path_to_collectibles(t_params *params);
+int validate_map(t_params *params);
+
+// map.c
+void    init_map(t_map *map);
+void    parse_map_from_queue(t_line_queue *q, t_map *map);
+void	parse_map(t_params *params);
+void    find_player_and_exit_position(t_params *params);
+int		count_collectibles(t_map *map);
+void    free_map(t_map *map);
+
+// depth_first_search.c
+int is_visited(int visited[][2], int *index, int col, int row);
+void    mark_visited(int visited[][2], int *index, int col, int row);
+int valid_move(t_map *map, int *new_pos, int visited[][2], int *index);
+int depth_first_search(t_map *map, int *current_pos, int visited[][2], int *index);
+int has_valid_path(t_params *params);
 
 #endif // SO_LONG_H
