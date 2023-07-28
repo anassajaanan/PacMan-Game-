@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:34:00 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/28 15:33:07 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/28 19:57:11 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ int is_valid_move(t_params *params, int row, int col, int direction)
 {
     if (direction == 0 && row > 0 && params->map.data[row - 1][col] != '1')
         return 1;
-    else if (direction == 1 && col < 22 && params->map.data[row][col + 1] != '1')
+    else if (direction == 1 && col < params->map.cols - 1 && params->map.data[row][col + 1] != '1')
         return 1;
-    else if (direction == 2 && row < 22 && params->map.data[row + 1][col] != '1')
+    else if (direction == 2 && row < params->map.rows - 1 && params->map.data[row + 1][col] != '1')
         return 1;
     else if (direction == 3 && col > 0 && params->map.data[row][col - 1] != '1')
         return 1;
@@ -95,9 +95,9 @@ int has_multiple_options(t_params *params, int row, int col)
 		new_row = row;
 		if (directions[i] == 0 && new_row > 0 && params->map.data[new_row - 1][new_col] != '1')
 			new_row--;
-		else if (directions[i] == 1 && new_col < 22 && params->map.data[new_row][new_col + 1] != '1')
+		else if (directions[i] == 1 && new_col < params->map.cols - 1 && params->map.data[new_row][new_col + 1] != '1')
 			new_col++;
-		else if (directions[i] == 2 && new_row < 22 && params->map.data[new_row + 1][new_col] != '1')
+		else if (directions[i] == 2 && new_row < params->map.rows - 1 && params->map.data[new_row + 1][new_col] != '1')
 			new_row++;
 		else if (directions[i] == 3 && new_col > 0 && params->map.data[new_row][new_col - 1] != '1')
 			new_col--;

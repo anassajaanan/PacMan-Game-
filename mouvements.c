@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:19:35 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/28 15:34:24 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/28 19:52:19 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	is_valid_mov(t_params *params, int row, int col)
 {
-	if (row < 0 || row > 22 || col < 0 || col > 22)
+	if (row < 0 || row > params->map.rows - 1 || col < 0 || col > params->map.cols - 1)
 		return (0);
 	if (params->map.data[row][col] == '1')
 		return (0);
