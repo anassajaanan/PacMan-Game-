@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 08:09:58 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/28 17:32:18 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 06:53:24 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,7 +195,7 @@ int	has_valid_path_to_collectibles(t_params *params)
 int validate_map(t_params *params)
 {
 	if (is_map_rectangular(&params->map) && is_valid_map_format(&params->map) && is_valid_map(&params->map) && !has_duplicates(&params->map)
-		&& is_map_closed_by_walls(&params->map) && has_valid_path_to_collectibles(params))
+		&& is_map_closed_by_walls(&params->map) && has_valid_path(params) &&  has_valid_path_to_collectibles(params))
 		return (1);
 	return (0);
 }

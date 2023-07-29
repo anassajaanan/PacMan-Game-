@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/28 17:33:12 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 06:53:39 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ int main(void)
 	int res = validate_map(&params);
 	if (res)
 		ft_printf("Map is valid\n");
+
+
 	
 	return (0);
 }
