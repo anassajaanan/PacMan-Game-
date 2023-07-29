@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:15:46 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 12:30:50 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ typedef struct s_params
 
 // player.c
 void							init_and_load_player(t_params *params);
+void							find_player_and_exit_position(t_params *params);
 void							check_ghost_collision(t_params *params);
 void							check_fruit_collision(t_params *params);
 
@@ -194,7 +195,6 @@ void							init_map(t_map *map);
 void							parse_map_from_queue(t_line_queue *q,
 									t_map *map);
 void							parse_map(t_params *params);
-void							find_player_and_exit_position(t_params *params);
 int								count_collectibles(t_map *map);
 void							free_map(t_map *map);
 

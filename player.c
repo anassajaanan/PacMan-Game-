@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:00:36 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 07:19:10 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 12:29:10 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,35 @@ void	init_and_load_player(t_params *params)
 	params->player.img[2] = mlx_xpm_file_to_image(params->mlx, "./textures/player/pac_man2.xpm", &width, &height);
 	params->player.img[3] = mlx_xpm_file_to_image(params->mlx, "./textures/player/pac_man3.xpm", &width, &height);
 	params->player.animation_img = mlx_xpm_file_to_image(params->mlx, "./textures/player/animation.xpm", &width, &height);
+}
+
+void	find_player_and_exit_position(t_params *params)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < params->map.rows)
+	{
+		j = 0;
+		while (j < params->map.cols)
+		{
+			if (params->map.data[i][j] == 'P')
+			{
+				params->player.col = j;
+				params->player.row = i;
+			}
+			else if (params->map.data[i][j] == 'E')
+			{
+				params->exit.col = j;
+				params->exit.row = i;
+			}
+			j++;
+		}
+		i++;
+	}
+	params->map.target.col = params->exit.col;
+	params->map.target.row = params->exit.row;
 }
 
 void	check_ghost_collision(t_params *params)
