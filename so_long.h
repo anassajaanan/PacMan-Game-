@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 09:21:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 10:31:51 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,17 +196,22 @@ int								count_collectibles(t_map *map);
 void							free_map(t_map *map);
 
 // depth_first_search.c
-int								is_visited(int visited[][2], int *index,
-									int col, int row);
-void							mark_visited(int visited[][2], int *index,
-									int col, int row);
+int								is_visited(int **visited, int *index, int col,
+									int row);
+void							mark_visited(int **visited, int *index, int col,
+									int row);
 int								valid_move(t_map *map, int *new_pos,
-									int visited[][2], int *index);
+									int **visited, int *index);
 int								depth_first_search(t_map *map, int *current_pos,
-									int visited[][2], int *index);
+									int **visited, int *index);
 int								has_valid_path(t_params *params);
 
 void							get_random_collectible_position(
 									t_params *params, int *col, int *row);
+
+// depth_first_search_utils.c
+void							init_position(int array[2], int x, int y);
+int								**allocate_visited(t_params *params);
+void							free_visited(t_params *params, int **visited);
 
 #endif // SO_LONG_H
