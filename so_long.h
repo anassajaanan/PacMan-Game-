@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 13:13:54 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:39:55 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,15 +157,21 @@ void							move_blue_ghost_random(t_params *params);
 void							move_blue_ghost_continue(t_params *params);
 void							move_blue_ghost(t_params *params);
 
-// ghost_movement_utils.c
-void							shuffle(int *array, int n);
+// ghost_movement_utils1.c
+
 int								get_opposite_direction(int direction);
 void							get_available_directions(
 									int *available_directions, int direction);
 int								is_valid_move(t_params *params, int row,
 									int col, int direction);
+void							check_move(t_params *params, int direction,
+									int *new_row, int *new_col);
 int								has_multiple_options(t_params *params, int row,
 									int col);
+
+// ghost_movement_utils2.c
+void							shuffle(int *array, int n);
+void							init_directions(int directions[4]);
 
 // line_queue.c
 void							init_line_queue(t_line_queue *q);
