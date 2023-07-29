@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/28 17:32:36 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 07:26:29 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,5 +197,9 @@ void    mark_visited(int visited[][2], int *index, int col, int row);
 int valid_move(t_map *map, int *new_pos, int visited[][2], int *index);
 int depth_first_search(t_map *map, int *current_pos, int visited[][2], int *index);
 int has_valid_path(t_params *params);
+
+
+
+void	get_random_collectible_position(t_params *params, int *col, int *row);
 
 #endif // SO_LONG_H

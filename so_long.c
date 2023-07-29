@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 07:07:14 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 07:25:44 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,23 @@ int	update_window(t_params *params)
 	return (0);
 }
 
+
+void	get_random_collectible_position(t_params *params, int *col, int *row)
+{
+	int new_col;
+	int	new_row;
+
+	new_col = rand() % params->map.cols;
+	new_row = rand() % params->map.rows;
+	while (params->map.data[new_row][new_col] != 'C')
+	{
+		new_col = rand() % params->map.cols;
+		new_row = rand() % params->map.rows;
+	}
+	*col = new_col;
+	*row = new_row;
+}
+
 int main(void)
 {
 	t_params	params;
@@ -84,7 +101,7 @@ int main(void)
 	if (validate_map(&params))
 	{
 		params.mlx = mlx_init();
-		params.win = mlx_new_window(params.mlx, WIN_WIDTH, WIN_HEIGHT, "so_long");
+		params.win = mlx_new_window(params.mlx, params.map.cols * 32, params.map.rows * 32, "so_long");
 		params.is_game_over = 0;
 		
 		

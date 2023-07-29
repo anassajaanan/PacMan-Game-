@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:59:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/27 10:07:20 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 07:27:43 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,10 @@ void	init_and_load_fruits(t_params *params)
 	int	width;
 	int height;
 	
-	params->apple.col = 11;
-	params->apple.row = 11;
-	params->cherry.col = 1;
-	params->cherry.row = 19;
-	params->strawberry.col = 1;
-	params->strawberry.row = 17;
-	params->orange.col = 21;
-	params->orange.row = 19;
+	get_random_collectible_position(params, &params->apple.col, &params->apple.row);
+	get_random_collectible_position(params, &params->cherry.col, &params->cherry.row);
+	get_random_collectible_position(params, &params->strawberry.col, &params->strawberry.row);
+	get_random_collectible_position(params, &params->orange.col, &params->orange.row);
 	params->apple.img = mlx_xpm_file_to_image(params->mlx, "./textures/fruits/apple.xpm", &width, &height);
 	params->orange.img = mlx_xpm_file_to_image(params->mlx, "./textures/fruits/orange.xpm", &width, &height);
 	params->cherry.img = mlx_xpm_file_to_image(params->mlx, "./textures/fruits/cherry.xpm", &width, &height);
