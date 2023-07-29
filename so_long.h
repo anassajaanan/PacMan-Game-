@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 10:31:51 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 12:15:46 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,17 +174,20 @@ int								line_queue_is_empty(t_line_queue *q);
 int								line_queue_size(t_line_queue *q);
 
 // map_validator.c
-int								is_valid_character(char c);
-int								count_charcters(t_map *map, char c);
-int								is_valid_map_format(t_map *map);
-int								is_valid_map(t_map *map);
 int								has_duplicates(t_map *map);
 int								is_map_rectangular(t_map *map);
-int								is_row_only_walls(char *row);
 int								is_map_closed_by_walls(t_map *map);
 int								has_valid_path_to_collectibles(
 									t_params *params);
 int								validate_map(t_params *params);
+
+// map_validator_utils.c
+int								is_valid_character(char c);
+int								count_charcters(t_map *map, char c);
+int								is_row_only_walls(char *row);
+int								is_valid_map_format(t_map *map);
+int								is_valid_map(t_map *map);
+
 
 // map.c
 void							init_map(t_map *map);
