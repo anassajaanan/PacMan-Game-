@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:30:50 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 13:13:54 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,8 +209,13 @@ int								depth_first_search(t_map *map, int *current_pos,
 									int **visited, int *index);
 int								has_valid_path(t_params *params);
 
+
+// game_utils.c
+void							display_score_and_moves(t_params *params);
 void							get_random_collectible_position(
 									t_params *params, int *col, int *row);
+void							display_win_screen(t_params *params);
+void							display_game_over(t_params *params);
 
 // depth_first_search_utils.c
 void							init_position(int array[2], int x, int y);

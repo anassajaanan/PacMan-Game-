@@ -1,6 +1,6 @@
 NAME = so_long
 
-SRCS = so_long.c player.c ghosts.c fruits.c images.c mouvements.c ghost_movement.c red_ghost_movement.c blue_ghost_algorithm.c ghost_movement_utils.c \
+SRCS = so_long.c game_utils.c player.c ghosts.c fruits.c images.c mouvements.c ghost_movement.c red_ghost_movement.c blue_ghost_algorithm.c ghost_movement_utils.c \
 		line_queue.c map_validator.c map_validator_helpers.c map.c depth_first_search.c depth_first_search_utils.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c

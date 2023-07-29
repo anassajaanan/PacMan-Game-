@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 07:56:19 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:56:37 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 13:28:05 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,9 @@ void	move_red_ghost_continue(t_params *params)
 void	move_red_ghost(t_params *params)
 {
 	int			has_multiple;
-	static int	counter;
-	static int	ghost_speed;
+	static int	counter = 0;
+	static int	ghost_speed = 20;
 
-	counter = 0;
-	ghost_speed = 20;
 	counter++;
 	if (counter >= ghost_speed)
 	{

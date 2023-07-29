@@ -6,25 +6,11 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 08:54:05 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 13:29:33 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	display_score_and_moves(t_params *params)
-{
-	char	*moves;
-	char	*score;
-	
-	moves = ft_strjoin("Moves: ", ft_itoa(params->player.moves));
-	score = ft_strjoin("Score: ", ft_itoa(params->player.score));
-    mlx_string_put(params->mlx, params->win, 100, 20, 0xFFFFFF, moves);
-	mlx_string_put(params->mlx, params->win, 500, 20, 0xFFFFFF, score);
-	
-	free(moves);
-	free(score);
-}
 
 int	handle_keypress(int keycode, t_params *params)
 {
@@ -41,28 +27,27 @@ int	handle_keypress(int keycode, t_params *params)
 		move_player_down(params);
 	else if (keycode == 2 || keycode == 124)
 		move_player_right(params);
-
-		
 	return (0);
 }
 
 int	update_window(t_params *params)
 {
-	if (params->is_win && params->player.col == params->exit.col && params->player.row == params->exit.row)
+	if (params->is_win && params->player.col == params->exit.col
+		&& params->player.row == params->exit.row)
 	{
-		mlx_clear_window(params->mlx, params->win);
-		mlx_put_image_to_window(params->mlx, params->win, params->images.win, 0, 0);
+		display_win_screen(params);
 		return (0);
 	}
 	if (params->is_game_over)
 	{
-		mlx_clear_window(params->mlx, params->win);
-		mlx_put_image_to_window(params->mlx, params->win, params->images.game_over, 0, 0);
+		display_game_over(params);
 		return (0);
 	}
 	mlx_clear_window(params->mlx, params->win);
 	draw_images(params);
-	mlx_put_image_to_window(params->mlx, params->win, params->player.img[params->player.direction], params->player.col * 32, params->player.row * 32);
+	mlx_put_image_to_window(params->mlx, params->win,
+		params->player.img[params->player.direction], params->player.col * 32,
+		params->player.row * 32);
 	draw_fruits(params);
 	draw_ghosts(params);
 	move_pink_ghost(params);
@@ -74,51 +59,27 @@ int	update_window(t_params *params)
 	return (0);
 }
 
-
-void	get_random_collectible_position(t_params *params, int *col, int *row)
-{
-	int new_col;
-	int	new_row;
-
-	new_col = rand() % params->map.cols;
-	new_row = rand() % params->map.rows;
-	while (params->map.data[new_row][new_col] != 'C')
-	{
-		new_col = rand() % params->map.cols;
-		new_row = rand() % params->map.rows;
-	}
-	*col = new_col;
-	*row = new_row;
-}
-
-int main(void)
+int	main(void)
 {
 	t_params	params;
-	parse_map(&params);
-	
 
+	parse_map(&params);
 	if (validate_map(&params))
 	{
 		params.mlx = mlx_init();
-		params.win = mlx_new_window(params.mlx, params.map.cols * 32, params.map.rows * 32, "so_long");
+		params.win = mlx_new_window(params.mlx, params.map.cols * 32,
+				params.map.rows * 32, "so_long");
 		params.is_game_over = 0;
 		params.is_win = 0;
-		
-		
-		
 		init_and_load_player(&params);
 		init_and_load_fruits(&params);
 		load_images(&params);
 		init_and_load_fruits(&params);
 		init_ghosts(&params);
 		load_ghosts_imgs(&params);
-		// parse_map_data(&params);
-		
-		mlx_hook(params.win, 2, 1L<<0, handle_keypress, &params);
+		mlx_hook(params.win, 2, 1L << 0, handle_keypress, &params);
 		mlx_loop_hook(params.mlx, update_window, &params);
 		mlx_loop(params.mlx);
 	}
-
-
 	return (0);
 }
