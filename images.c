@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:13:50 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 08:27:57 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:43:06 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,12 @@ void	draw_images(t_params *params)
 			else if (params->map.data[i][j] == '0')
 				mlx_put_image_to_window(params->mlx, params->win, params->images.img_log, j * 32, i * 32);
 			else if (params->map.data[i][j] == 'E')
-				mlx_put_image_to_window(params->mlx, params->win, params->images.exit1, j * 32, i * 32);
+			{
+				if (params->is_win)
+					mlx_put_image_to_window(params->mlx, params->win, params->images.exit2, j * 32, i * 32);
+				else
+					mlx_put_image_to_window(params->mlx, params->win, params->images.exit1, j * 32, i * 32);
+			}
 			j++;
 		}
 		i++;

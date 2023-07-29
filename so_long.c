@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 07:39:59 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:44:33 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	handle_keypress(int keycode, t_params *params)
 
 int	update_window(t_params *params)
 {
-	if (params->player.score>= (params->map.collectibles * 10 + 1600))
+	if (params->is_win && params->player.col == params->exit.col && params->player.row == params->exit.row)
 	{
 		mlx_clear_window(params->mlx, params->win);
 		mlx_put_image_to_window(params->mlx, params->win, params->images.win, 0, 0);
@@ -103,6 +103,7 @@ int main(void)
 		params.mlx = mlx_init();
 		params.win = mlx_new_window(params.mlx, params.map.cols * 32, params.map.rows * 32, "so_long");
 		params.is_game_over = 0;
+		params.is_win = 0;
 		
 		
 		
