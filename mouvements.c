@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:19:35 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 07:47:15 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:35:49 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	move_player_up(t_params *params)
 		params->player.moves++;
 		params->player.direction = 0;
 		if (params->map.data[params->player.row][params->player.col] == 'C')
+		{
 			params->player.score += 10;
-		params->map.data[params->player.row][params->player.col] = '2';
+			params->map.data[params->player.row][params->player.col] = '2';
+		}
 		mlx_put_image_to_window(params->mlx, params->win, params->player.animation_img, params->player.col * 32, params->player.row * 32);
 		usleep(ANIMATION_DELAY);
 		check_fruit_collision(params);
@@ -45,10 +47,12 @@ void	move_player_left(t_params *params)
 	{
 		params->player.col--;
 		params->player.moves++;
-		if (params->map.data[params->player.row][params->player.col] == 'C')
-			params->player.score += 10;
 		params->player.direction = 1;
-		params->map.data[params->player.row][params->player.col] = '2';
+		if (params->map.data[params->player.row][params->player.col] == 'C')
+		{
+			params->player.score += 10;
+			params->map.data[params->player.row][params->player.col] = '2';
+		}
 		mlx_put_image_to_window(params->mlx, params->win, params->player.animation_img, params->player.col * 32, params->player.row * 32);
 		usleep(ANIMATION_DELAY);
 		check_fruit_collision(params);
@@ -61,10 +65,12 @@ void	move_player_down(t_params *params)
 	{
 		params->player.row++;
 		params->player.moves++;
-		if (params->map.data[params->player.row][params->player.col] == 'C')
-			params->player.score += 10;
 		params->player.direction = 2;
-		params->map.data[params->player.row][params->player.col] = '2';
+		if (params->map.data[params->player.row][params->player.col] == 'C')
+		{
+			params->player.score += 10;
+			params->map.data[params->player.row][params->player.col] = '2';
+		}
 		mlx_put_image_to_window(params->mlx, params->win, params->player.animation_img, params->player.col * 32, params->player.row * 32);
 		usleep(ANIMATION_DELAY);
 		check_fruit_collision(params);
@@ -78,10 +84,12 @@ void	move_player_right(t_params *params)
 	{
 		params->player.col++;
 		params->player.moves++;
-		if (params->map.data[params->player.row][params->player.col] == 'C')
-			params->player.score += 10;
 		params->player.direction = 3;
-		params->map.data[params->player.row][params->player.col] = '2';
+		if (params->map.data[params->player.row][params->player.col] == 'C')
+		{
+			params->player.score += 10;
+			params->map.data[params->player.row][params->player.col] = '2';
+		}
 		mlx_put_image_to_window(params->mlx, params->win, params->player.animation_img, params->player.col * 32, params->player.row * 32);
 		usleep(ANIMATION_DELAY);
 		check_fruit_collision(params);

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 07:26:29 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 08:21:19 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ typedef struct s_images
 	void	*img_log;
 	void	*game_over;
 	void	*win;
+	void	*exit1;
+	void	*exit2;
 }			t_images;
 
 typedef struct s_map
