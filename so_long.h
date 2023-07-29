@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 15:39:55 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:53:52 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,7 +195,6 @@ int								is_row_only_walls(char *row);
 int								is_valid_map_format(t_map *map);
 int								is_valid_map(t_map *map);
 
-
 // map.c
 void							init_map(t_map *map);
 void							parse_map_from_queue(t_line_queue *q,
@@ -214,7 +213,6 @@ int								valid_move(t_map *map, int *new_pos,
 int								depth_first_search(t_map *map, int *current_pos,
 									int **visited, int *index);
 int								has_valid_path(t_params *params);
-
 
 // game_utils.c
 void							display_score_and_moves(t_params *params);

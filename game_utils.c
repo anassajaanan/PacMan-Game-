@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 13:07:41 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 15:01:04 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 15:54:19 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,3 @@ void	display_game_over(t_params *params)
 	mlx_put_image_to_window(params->mlx, params->win, params->images.game_over,
 		0, 0);
 }
-
