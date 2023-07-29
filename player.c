@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:00:36 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/28 19:45:30 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 07:02:27 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	init_and_load_player(t_params *params)
 	int	width;
 	int	height;
 	
-	params->player.col = params->player.col;
-	params->player.row = params->player.row;
+	// params->player.col = params->player.col;
+	// params->player.row = params->player.row;
 	params->player.moves = 0;
 	params->player.score = 0;
 	params->player.direction = 3;
