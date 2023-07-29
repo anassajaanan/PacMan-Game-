@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 07:45:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:28:58 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 14:57:58 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	parse_map(t_params *params)
 	parse_map_from_queue(&params->q, &params->map);
 	find_player_and_exit_position(params);
 	params->map.collectibles = count_collectibles(&params->map);
+	close(fd);
 }
 
 void	free_map(t_map *map)

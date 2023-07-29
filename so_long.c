@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 13:29:33 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 14:52:49 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ int	main(void)
 		mlx_loop_hook(params.mlx, update_window, &params);
 		mlx_loop(params.mlx);
 	}
+	free_map(&params.map);
 	return (0);
 }
