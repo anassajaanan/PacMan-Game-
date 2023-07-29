@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 15:53:52 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 19:34:05 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct s_map
 {
 	int							rows;
 	int							cols;
+	char						*map_file;
 	char						**data;
 	int							collectibles;
 	t_exit						target;
@@ -199,7 +200,7 @@ int								is_valid_map(t_map *map);
 void							init_map(t_map *map);
 void							parse_map_from_queue(t_line_queue *q,
 									t_map *map);
-void							parse_map(t_params *params);
+int								parse_map(t_params *params);
 int								count_collectibles(t_map *map);
 void							free_map(t_map *map);
 
@@ -225,5 +226,9 @@ void							display_game_over(t_params *params);
 void							init_position(int array[2], int x, int y);
 int								**allocate_visited(t_params *params);
 void							free_visited(t_params *params, int **visited);
+
+// parsing.c
+int								handle_arguments(int argc, char **argv,
+									t_params *params);
 
 #endif // SO_LONG_H

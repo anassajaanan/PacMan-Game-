@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 15:02:11 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 19:47:54 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,13 @@ int	update_window(t_params *params)
 	return (0);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_params	params;
 
-	parse_map(&params);
-	if (validate_map(&params))
+	params.map.data = NULL;
+	if (handle_arguments(argc, argv, &params)
+		&& parse_map(&params) && validate_map(&params))
 	{
 		params.mlx = mlx_init();
 		params.win = mlx_new_window(params.mlx, params.map.cols * 32,
@@ -89,6 +90,7 @@ int	main(void)
 		mlx_loop_hook(params.mlx, update_window, &params);
 		mlx_loop(params.mlx);
 	}
-	free_map(&params.map);
+	if (params.map.data)
+		free_map(&params.map);
 	return (0);
 }

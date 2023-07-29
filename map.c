@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 07:45:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 14:57:58 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/29 20:22:22 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,22 @@ int	count_collectibles(t_map *map)
 	return (count);
 }
 
-void	parse_map(t_params *params)
+int	parse_map(t_params *params)
 {
 	int		fd;
 	char	*line;
+	char	*map_file;
 
 	init_line_queue(&params->q);
 	init_map(&params->map);
-	fd = open("./maps/map.ber", O_RDONLY);
+	map_file = ft_strjoin("./maps/", params->map.map_file);
+	fd = open(map_file, O_RDONLY);
+	free(map_file);
+	if (fd < 0)
+	{
+		ft_printf("Error: Invalid map file.\n");
+		return (0);
+	}
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -83,7 +91,7 @@ void	parse_map(t_params *params)
 	parse_map_from_queue(&params->q, &params->map);
 	find_player_and_exit_position(params);
 	params->map.collectibles = count_collectibles(&params->map);
-	close(fd);
+	return (1);
 }
 
 void	free_map(t_map *map)
