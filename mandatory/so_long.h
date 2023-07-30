@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 08:31:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:13:13 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,6 @@ void							init_and_load_player(t_params *params);
 void							find_player_and_exit_position(t_params *params);
 void							check_ghost_collision(t_params *params);
 void							check_fruit_collision(t_params *params);
-
-// ghosts.c
-void							init_ghosts(t_params *params);
-void							load_ghosts_imgs(t_params *params);
-void							draw_ghosts(t_params *params);
 
 // fruits.c
 void							init_and_load_fruits(t_params *params);

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:07:23 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:12:58 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,10 @@ int	update_window(t_params *params)
 		return (0);
 	}
 	mlx_clear_window(params->mlx, params->win);
-	draw_images(params);
 	mlx_put_image_to_window(params->mlx, params->win,
 		params->player.img[params->player.direction], params->player.col * 32,
 		params->player.row * 32);
 	draw_fruits(params);
-	draw_ghosts(params);
 	move_pink_ghost(params);
 	move_yellow_ghost(params);
 	move_blue_ghost(params);
@@ -81,8 +79,6 @@ int	main(int argc, char **argv)
 		init_and_load_fruits(&params);
 		load_images(&params);
 		init_and_load_fruits(&params);
-		init_ghosts(&params);
-		load_ghosts_imgs(&params);
 		mlx_hook(params.win, 2, 1L << 0, handle_keypress, &params);
 		mlx_hook(params.win, 17, 1L << 17, handle_window_close, &params);
 		mlx_loop_hook(params.mlx, update_window, &params);
