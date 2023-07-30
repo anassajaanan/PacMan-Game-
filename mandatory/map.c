@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 07:45:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:02:33 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 12:45:33 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	parse_map_from_queue(t_line_queue *q, t_map *map)
 	map->data = (char **)malloc(sizeof(char *) * map->rows);
 	if (map->data == NULL)
 	{
-		ft_printf("Error: malloc failed\n");
+		ft_printf("Error\n❌ malloc failed ❌ \n");
 		exit(1);
 	}
 	i = 0;
@@ -75,7 +75,7 @@ int	parse_map(t_params *params)
 	fd = open(params->map.map_file, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_printf("Error: Invalid map file.\n");
+		ft_printf("Error\n❌ Invalid map file. ❌ \n");
 		close(fd);
 		return (0);
 	}
@@ -104,4 +104,5 @@ void	free_map(t_map *map)
 		i++;
 	}
 	free(map->data);
+	map->data = NULL;
 }

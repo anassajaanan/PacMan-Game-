@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 18:54:47 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:00:20 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 12:13:26 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	handle_arguments(int argc, char **argv, t_params *params)
 {
 	int			len;
 	char		*map_file;
-	struct stat	file_stat;
 
 	if (argc != 2)
 	{
@@ -38,14 +37,7 @@ int	handle_arguments(int argc, char **argv, t_params *params)
 	len = ft_strlen(map_file);
 	if (len < 4 || ft_strcmp(map_file + len - 4, ".ber") != 0)
 	{
-		ft_printf("Error: Invalid map file. It should end with '.ber'.\n");
-		return (0);
-	}
-	if (stat(map_file, &file_stat) != 0
-		|| !S_ISREG(file_stat.st_mode))
-	{
-		ft_printf("Error: The specified map file '%s' is not a regular file.\n",
-			map_file);
+		ft_printf("Error\n❌ Invalid map file. It should end with '.ber' ❌ \n");
 		return (0);
 	}
 	return (1);

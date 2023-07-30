@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 11:47:49 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 12:42:58 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	handle_keypress(int keycode, t_params *params)
 	if (keycode == 53)
 	{
 		mlx_destroy_window(params->mlx, params->win);
+		free_map(&params->map);
 		exit(0);
 	}
 	else if (keycode == 13 || keycode == 126)
@@ -33,6 +34,7 @@ int	handle_keypress(int keycode, t_params *params)
 int	handle_window_close(t_params *params)
 {
 	mlx_destroy_window(params->mlx, params->win);
+	free_map(&params->map);
 	exit(0);
 	return (0);
 }
@@ -43,6 +45,7 @@ int	update_window(t_params *params)
 		&& params->player.row == params->exit.row)
 	{
 		mlx_destroy_window(params->mlx, params->win);
+		free_map(&params->map);
 		exit(0);
 		return (0);
 	}
