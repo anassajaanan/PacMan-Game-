@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 07:45:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 20:22:22 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 08:37:28 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_map(t_map *map)
 	map->rows = 0;
 	map->cols = 0;
 	map->data = NULL;
+	map->map_file = NULL;
 }
 
 void	parse_map_from_queue(t_line_queue *q, t_map *map)
@@ -69,16 +70,13 @@ int	parse_map(t_params *params)
 {
 	int		fd;
 	char	*line;
-	char	*map_file;
 
 	init_line_queue(&params->q);
-	init_map(&params->map);
-	map_file = ft_strjoin("./maps/", params->map.map_file);
-	fd = open(map_file, O_RDONLY);
-	free(map_file);
+	fd = open(params->map.map_file, O_RDONLY);
 	if (fd < 0)
 	{
 		ft_printf("Error: Invalid map file.\n");
+		close(fd);
 		return (0);
 	}
 	line = get_next_line(fd);
@@ -91,6 +89,7 @@ int	parse_map(t_params *params)
 	parse_map_from_queue(&params->q, &params->map);
 	find_player_and_exit_position(params);
 	params->map.collectibles = count_collectibles(&params->map);
+	close(fd);
 	return (1);
 }
 

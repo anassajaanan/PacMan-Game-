@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 19:34:05 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 08:31:40 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <sys/stat.h>
 
 typedef struct s_player
 {
@@ -230,5 +231,7 @@ void							free_visited(t_params *params, int **visited);
 // parsing.c
 int								handle_arguments(int argc, char **argv,
 									t_params *params);
+int								validate_and_parse_arguments(int argc,
+									char **argv, t_params *params);
 
 #endif // SO_LONG_H
