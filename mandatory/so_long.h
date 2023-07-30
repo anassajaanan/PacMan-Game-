@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:18:08 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:32:31 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,6 @@ typedef struct s_exit
 	int							col;
 	int							row;
 }								t_exit;
-
-typedef struct s_fruit
-{
-	int							col;
-	int							row;
-	void						*img;
-}								t_fruit;
 
 typedef struct s_images
 {
@@ -90,10 +83,6 @@ typedef struct s_params
 	t_line_queue				q;
 	t_player					player;
 	t_exit						exit;
-	t_fruit						apple;
-	t_fruit						orange;
-	t_fruit						cherry;
-	t_fruit						strawberry;
 	t_images					images;
 	int							is_game_over;
 	int							is_win;
@@ -102,11 +91,6 @@ typedef struct s_params
 // player.c
 void							init_and_load_player(t_params *params);
 void							find_player_and_exit_position(t_params *params);
-void							check_fruit_collision(t_params *params);
-
-// fruits.c
-void							init_and_load_fruits(t_params *params);
-void							draw_fruits(t_params *params);
 
 // images.c
 void							load_images(t_params *params);

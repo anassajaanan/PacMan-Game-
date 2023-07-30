@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:00:36 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:19:31 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:31:46 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,30 +61,3 @@ void	find_player_and_exit_position(t_params *params)
 	params->map.target.row = params->exit.row;
 }
 
-void	check_fruit_collision(t_params *params)
-{
-	if (params->player.col == params->apple.col
-		&& params->player.row == params->apple.row)
-	{
-		params->player.score += 700;
-		params->apple.col = -1;
-	}
-	else if (params->player.col == params->orange.col
-		&& params->player.row == params->orange.row)
-	{
-		params->player.score += 500;
-		params->orange.col = -1;
-	}
-	else if (params->player.col == params->strawberry.col
-		&& params->player.row == params->strawberry.row)
-	{
-		params->player.score += 300;
-		params->strawberry.col = -1;
-	}
-	else if (params->player.col == params->cherry.col
-		&& params->player.row == params->cherry.row)
-	{
-		params->player.score += 100;
-		params->cherry.col = -1;
-	}
-}
