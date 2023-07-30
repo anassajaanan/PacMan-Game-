@@ -6,13 +6,11 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:19:35 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:39:15 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 11:44:54 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-#define ANIMATION_DELAY 5
 
 int	is_valid_mov(t_params *params, int row, int col)
 {
@@ -39,9 +37,9 @@ void	move_player_up(t_params *params)
 		mlx_put_image_to_window(params->mlx, params->win,
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
-		usleep(ANIMATION_DELAY);
 		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
+		ft_printf("Moves: %d\n", params->player.moves);
 	}
 }
 
@@ -60,9 +58,9 @@ void	move_player_left(t_params *params)
 		mlx_put_image_to_window(params->mlx, params->win,
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
-		usleep(ANIMATION_DELAY);
 		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
+		ft_printf("Moves: %d\n", params->player.moves);
 	}
 }
 
@@ -81,9 +79,9 @@ void	move_player_down(t_params *params)
 		mlx_put_image_to_window(params->mlx, params->win,
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
-		usleep(ANIMATION_DELAY);
 		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
+		ft_printf("Moves: %d\n", params->player.moves);
 	}
 }
 
@@ -102,8 +100,8 @@ void	move_player_right(t_params *params)
 		mlx_put_image_to_window(params->mlx, params->win,
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
-		usleep(ANIMATION_DELAY);
 		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
+		ft_printf("Moves: %d\n", params->player.moves);
 	}
 }

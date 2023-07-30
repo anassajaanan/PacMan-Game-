@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:58:23 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 11:46:43 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ typedef struct s_params
 
 // player.c
 void							init_and_load_player(t_params *params);
+void							draw_player(t_params *params);
 void							find_player_and_exit_position(t_params *params);
 
 // images.c
@@ -144,9 +145,6 @@ int								valid_move(t_map *map, int *new_pos,
 int								depth_first_search(t_map *map, int *current_pos,
 									int **visited, int *index);
 int								has_valid_path(t_params *params);
-
-// game_utils.c
-void							display_score_and_moves(t_params *params);
 
 // depth_first_search_utils.c
 void							init_position(int array[2], int x, int y);
