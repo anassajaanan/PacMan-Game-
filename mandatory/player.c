@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:00:36 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 11:47:21 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 13:44:15 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,3 @@ void	find_player_and_exit_position(t_params *params)
 	params->map.target.col = params->exit.col;
 	params->map.target.row = params->exit.row;
 }
-

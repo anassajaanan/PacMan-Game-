@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 12:40:18 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 13:44:30 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ void							move_player_up(t_params *params);
 void							move_player_left(t_params *params);
 void							move_player_down(t_params *params);
 void							move_player_right(t_params *params);
-
 
 // line_queue.c
 void							init_line_queue(t_line_queue *q);
