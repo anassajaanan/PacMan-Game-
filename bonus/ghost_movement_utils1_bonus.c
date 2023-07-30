@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ghost_movement_utils1.c                            :+:      :+:    :+:   */
+/*   ghost_movement_utils1_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:34:00 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 15:40:52 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:36:16 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	get_opposite_direction(int direction)
 {

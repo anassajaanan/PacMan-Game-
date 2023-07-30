@@ -1,9 +1,10 @@
 NAME =	so_long
 
-SRCS =	so_long.c game_utils.c player.c ghosts.c fruits.c images.c mouvements.c ghost_movement.c \
-		red_ghost_movement.c blue_ghost_algorithm.c ghost_movement_utils1.c ghost_movement_utils2.c \
-		line_queue.c map_validator.c map_validator_helpers.c map.c depth_first_search.c \
-		depth_first_search_utils.c parsing.c \
+SRCS =	so_long_bonus.c game_utils_bonus.c player_bonus.c ghosts_bonus.c fruits_bonus.c images_bonus.c \
+		mouvements_bonus.c ghost_movement_bonus.c red_ghost_movement_bonus.c blue_ghost_algorithm_bonus.c \
+		ghost_movement_utils1_bonus.c ghost_movement_utils2_bonus.c \
+		line_queue_bonus.c map_validator_bonus.c map_validator_helpers_bonus.c map_bonus.c depth_first_search_bonus.c \
+		depth_first_search_utils_bonus.c parsing_bonus.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c
 

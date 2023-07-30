@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouvements.c                                       :+:      :+:    :+:   */
+/*   mouvements_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:19:35 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:33:48 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:37:02 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 #define ANIMATION_DELAY 5
 

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   depth_first_search.c                               :+:      :+:    :+:   */
+/*   depth_first_search_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 11:07:12 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 10:30:15 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:35:38 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	is_visited(int **visited, int *index, int col, int row)
 {

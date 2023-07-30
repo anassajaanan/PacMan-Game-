@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 08:31:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:38:27 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include "./ft_printf/ft_printf.h"
 # include "./get_next_line/get_next_line.h"
@@ -234,4 +234,4 @@ int								handle_arguments(int argc, char **argv,
 int								validate_and_parse_arguments(int argc,
 									char **argv, t_params *params);
 
-#endif // SO_LONG_H
+#endif // SO_LONG_BONUS_H

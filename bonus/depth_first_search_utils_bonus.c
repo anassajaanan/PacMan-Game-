@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   depth_first_search_utils.c                         :+:      :+:    :+:   */
+/*   depth_first_search_utils_bonus.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 10:18:11 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 10:33:03 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:35:48 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	init_position(int array[2], int x, int y)
 {

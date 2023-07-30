@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   red_ghost_movement.c                               :+:      :+:    :+:   */
+/*   red_ghost_movement_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 07:56:19 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 13:28:05 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:37:22 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	choose_valid_direction_red(t_params *params, int new_col, int new_row,
 		int direction)

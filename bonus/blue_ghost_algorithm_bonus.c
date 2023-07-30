@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   blue_ghost_algorithm.c                             :+:      :+:    :+:   */
+/*   blue_ghost_algorithm_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:41:19 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 09:53:21 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:35:25 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	choose_valid_direction_blue(t_params *params, int new_col, int new_row,
 		int direction)

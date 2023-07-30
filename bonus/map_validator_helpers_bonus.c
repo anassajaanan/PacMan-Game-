@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_validator_helpers.c                            :+:      :+:    :+:   */
+/*   map_validator_helpers_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:09:57 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:18:17 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:36:57 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	is_valid_character(char c)
 {

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_utils.c                                       :+:      :+:    :+:   */
+/*   game_utils_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 13:07:41 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 15:54:19 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:36:04 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	display_score_and_moves(t_params *params)
 {

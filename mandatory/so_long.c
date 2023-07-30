@@ -6,19 +6,35 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 14:11:09 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:57:30 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	free_and_destroy(t_params *params)
+{
+	mlx_destroy_image(params->mlx, params->images.wall);
+	mlx_destroy_image(params->mlx, params->images.collectible);
+	mlx_destroy_image(params->mlx, params->images.empty);
+	mlx_destroy_image(params->mlx, params->images.exit1);
+	mlx_destroy_image(params->mlx, params->images.exit2);
+	mlx_destroy_image(params->mlx, params->player.animation_img);
+	mlx_destroy_image(params->mlx, params->player.img[0]);
+	mlx_destroy_image(params->mlx, params->player.img[1]);
+	mlx_destroy_image(params->mlx, params->player.img[2]);
+	mlx_destroy_image(params->mlx, params->player.img[3]);
+	mlx_destroy_window(params->mlx, params->win);
+	free_map(&params->map);
+	exit(0);
+}
+
 int	handle_keypress(int keycode, t_params *params)
 {
 	if (keycode == 53)
 	{
-		mlx_destroy_window(params->mlx, params->win);
-		free_map(&params->map);
-		exit(0);
+		free_and_destroy(params);
+		return (0);
 	}
 	else if (keycode == 13 || keycode == 126)
 		move_player_up(params);
@@ -33,9 +49,7 @@ int	handle_keypress(int keycode, t_params *params)
 
 int	handle_window_close(t_params *params)
 {
-	mlx_destroy_window(params->mlx, params->win);
-	free_map(&params->map);
-	exit(0);
+	free_and_destroy(params);
 	return (0);
 }
 
@@ -44,9 +58,7 @@ int	update_window(t_params *params)
 	if (params->is_win && params->player.col == params->exit.col
 		&& params->player.row == params->exit.row)
 	{
-		mlx_destroy_window(params->mlx, params->win);
-		free_map(&params->map);
-		exit(0);
+		free_and_destroy(params);
 		return (0);
 	}
 	mlx_clear_window(params->mlx, params->win);
@@ -72,7 +84,5 @@ int	main(int argc, char **argv)
 		mlx_loop_hook(params.mlx, update_window, &params);
 		mlx_loop(params.mlx);
 	}
-	if (params.map.data)
-		free_map(&params.map);
-	return (0);
+	exit(0);
 }

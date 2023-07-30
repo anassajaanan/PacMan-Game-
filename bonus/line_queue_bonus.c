@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   line_queue.c                                       :+:      :+:    :+:   */
+/*   line_queue_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:02:25 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:04:37 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:36:40 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	init_line_queue(t_line_queue *q)
 {

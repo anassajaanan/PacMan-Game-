@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ghost_movement_utils2.c                            :+:      :+:    :+:   */
+/*   ghost_movement_utils2_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 15:12:22 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 15:26:37 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:36:23 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	shuffle(int *array, int n)
 {

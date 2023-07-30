@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ghost_movement.c                                   :+:      :+:    :+:   */
+/*   ghost_movement_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 07:39:15 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 11:45:13 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:36:09 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	move_pink(t_params *params)
 {

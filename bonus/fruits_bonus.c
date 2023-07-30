@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fruits.c                                           :+:      :+:    :+:   */
+/*   fruits_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:59:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 10:36:36 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:35:55 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	init_and_load_fruits(t_params *params)
 {
