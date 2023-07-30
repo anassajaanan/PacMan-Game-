@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 08:34:29 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:07:23 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	main(int argc, char **argv)
 {
 	t_params	params;
 
-	params.map.data = NULL;
 	if (validate_and_parse_arguments(argc, argv, &params))
 	{
 		params.mlx = mlx_init();
