@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 13:43:23 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:11:09 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int	main(int argc, char **argv)
 				params.map.rows * 32, "so_long");
 		init_and_load_player(&params);
 		load_images(&params);
+		check_image_load_status(&params);
 		mlx_hook(params.win, 2, 1L << 0, handle_keypress, &params);
 		mlx_hook(params.win, 17, 1L << 17, handle_window_close, &params);
 		mlx_loop_hook(params.mlx, update_window, &params);

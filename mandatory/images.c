@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:13:50 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 12:23:41 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:10:42 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,20 @@ void	draw_images(t_params *params)
 			j++;
 		}
 		i++;
+	}
+}
+
+void	check_image_load_status(t_params *params)
+{
+	if (!params->images.wall || !params->images.collectible
+		|| !params->images.empty || !params->images.exit1
+		|| !params->images.exit2 || !params->player.animation_img
+		|| !params->player.img[0] || !params->player.img[1]
+		|| !params->player.img[2] || !params->player.img[3])
+	{
+		mlx_destroy_window(params->mlx, params->win);
+		free_map(&params->map);
+		ft_printf("Error\n❌ Failed to load one or more images. ❌ \n");
+		exit(1);
 	}
 }

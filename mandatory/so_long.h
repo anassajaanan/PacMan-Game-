@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 13:44:30 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:08:31 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void							find_player_and_exit_position(t_params *params);
 // images.c
 void							load_images(t_params *params);
 void							draw_images(t_params *params);
+void							check_image_load_status(t_params *params);
 
 // parsing.c
 void							parse_map_data(t_params *params);
