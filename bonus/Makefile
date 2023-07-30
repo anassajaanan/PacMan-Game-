@@ -1,17 +1,15 @@
-NAME = so_long
+NAME =	so_long
 
-SRCS = so_long.c game_utils.c player.c ghosts.c fruits.c images.c mouvements.c ghost_movement.c red_ghost_movement.c blue_ghost_algorithm.c ghost_movement_utils1.c ghost_movement_utils2.c \
-		line_queue.c map_validator.c map_validator_helpers.c map.c depth_first_search.c depth_first_search_utils.c parsing.c \
+SRCS =	so_long.c game_utils.c player.c ghosts.c fruits.c images.c mouvements.c ghost_movement.c \
+		red_ghost_movement.c blue_ghost_algorithm.c ghost_movement_utils1.c ghost_movement_utils2.c \
+		line_queue.c map_validator.c map_validator_helpers.c map.c depth_first_search.c \
+		depth_first_search_utils.c parsing.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
-CC = cc
-
-CFLAGS = -Wall -Wextra -Werror
-
-RM = rm -fr
+CFLAGS = -Wall -Wextra -Werror -Imlx
 
 all : $(NAME)
 
@@ -20,9 +18,6 @@ ${NAME} : ${OBJS}
 		@make -C ./ft_printf
 		@make -C ./mlx
 		${CC} ${CFLAGS} ${OBJS} -L./libft -lft -L./mlx -lmlx -L./ft_printf -lftprintf -framework OpenGL -framework AppKit -o ${NAME}
-
-%.o : %.c
-		${CC} ${CFLAGS} -Imlx -c $< -o $@
 
 clean :
 		@make clean -C ./libft

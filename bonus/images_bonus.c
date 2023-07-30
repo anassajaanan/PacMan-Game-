@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:13:50 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:01:29 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 09:03:40 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	draw_map_tile(t_params *params, int j, int i)
 			params->images.collectible, j * 32, i * 32);
 	else if (params->map.data[i][j] == '0')
 		mlx_put_image_to_window(params->mlx, params->win,
-			params->images.img_log, j * 32, i * 32);
+			params->images.empty, j * 32, i * 32);
 	else if (params->map.data[i][j] == 'E')
 	{
 		if (params->is_win)
