@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:13:13 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:18:08 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,6 @@ typedef struct s_exit
 	int							col;
 	int							row;
 }								t_exit;
-
-typedef struct s_ghost
-{
-	int							col;
-	int							row;
-	void						*img[4];
-	int							direction;
-}								t_ghost;
 
 typedef struct s_fruit
 {
@@ -98,10 +90,6 @@ typedef struct s_params
 	t_line_queue				q;
 	t_player					player;
 	t_exit						exit;
-	t_ghost						red;
-	t_ghost						blue;
-	t_ghost						yellow;
-	t_ghost						pink;
 	t_fruit						apple;
 	t_fruit						orange;
 	t_fruit						cherry;
@@ -114,7 +102,6 @@ typedef struct s_params
 // player.c
 void							init_and_load_player(t_params *params);
 void							find_player_and_exit_position(t_params *params);
-void							check_ghost_collision(t_params *params);
 void							check_fruit_collision(t_params *params);
 
 // fruits.c
@@ -136,39 +123,6 @@ void							move_player_left(t_params *params);
 void							move_player_down(t_params *params);
 void							move_player_right(t_params *params);
 
-// ghost_movement.c
-void							move_pink_ghost(t_params *params);
-void							move_yellow_ghost(t_params *params);
-
-// red_ghost_movement.c
-int								choose_valid_direction_red(t_params *params,
-									int new_col, int new_row, int direction);
-void							move_red_ghost_random(t_params *params);
-void							move_red_ghost_continue(t_params *params);
-void							move_red_ghost(t_params *params);
-
-// blue_ghost_movement.c
-int								choose_valid_direction_blue(t_params *params,
-									int new_col, int new_row, int direction);
-void							move_blue_ghost_random(t_params *params);
-void							move_blue_ghost_continue(t_params *params);
-void							move_blue_ghost(t_params *params);
-
-// ghost_movement_utils1.c
-
-int								get_opposite_direction(int direction);
-void							get_available_directions(
-									int *available_directions, int direction);
-int								is_valid_move(t_params *params, int row,
-									int col, int direction);
-void							check_move(t_params *params, int direction,
-									int *new_row, int *new_col);
-int								has_multiple_options(t_params *params, int row,
-									int col);
-
-// ghost_movement_utils2.c
-void							shuffle(int *array, int n);
-void							init_directions(int directions[4]);
 
 // line_queue.c
 void							init_line_queue(t_line_queue *q);

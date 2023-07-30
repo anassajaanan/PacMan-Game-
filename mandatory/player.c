@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:00:36 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/29 12:52:48 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:19:31 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,6 @@ void	find_player_and_exit_position(t_params *params)
 	}
 	params->map.target.col = params->exit.col;
 	params->map.target.row = params->exit.row;
-}
-
-void	check_ghost_collision(t_params *params)
-{
-	if (params->player.col == params->red.col
-		&& params->player.row == params->red.row)
-		params->is_game_over = 1;
-	if (params->player.col == params->blue.col
-		&& params->player.row == params->blue.row)
-		params->is_game_over = 1;
-	if (params->player.col == params->pink.col
-		&& params->player.row == params->pink.row)
-		params->is_game_over = 1;
-	if (params->player.col == params->yellow.col
-		&& params->player.row == params->yellow.row)
-		params->is_game_over = 1;
 }
 
 void	check_fruit_collision(t_params *params)
