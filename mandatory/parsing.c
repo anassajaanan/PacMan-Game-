@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 18:54:47 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 15:10:27 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 19:14:35 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,6 @@ void	free_and_destroy(t_params *params)
 	if (params->player.img[3])
 		mlx_destroy_image(params->mlx, params->player.img[3]);
 	mlx_destroy_window(params->mlx, params->win);
+	free(params->mlx);
 	free_map(&params->map);
-	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 07:45:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 12:45:33 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 19:07:00 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,8 @@ void	free_map(t_map *map)
 {
 	int	i;
 
+	if (map->data == NULL)
+		return ;
 	i = 0;
 	while (i < map->rows)
 	{

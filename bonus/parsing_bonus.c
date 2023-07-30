@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 18:54:47 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 15:45:05 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 18:07:51 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,12 @@ int	validate_and_parse_arguments(int argc, char **argv, t_params *params)
 		return (1);
 	else
 		return (0);
+}
+
+void	free_and_destroy(t_params *params)
+{
+	destroy_images(params);
+	mlx_destroy_window(params->mlx, params->win);
+	free(params->mlx);
+	free_map(&params->map);
 }

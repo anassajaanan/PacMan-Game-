@@ -1,6 +1,6 @@
 NAME =	so_long
 
-SRCS =	so_long_bonus.c game_utils_bonus.c player_bonus.c ghosts_bonus.c fruits_bonus.c images_bonus.c \
+SRCS =	so_long_bonus.c game_utils_bonus.c player_bonus.c ghosts_bonus.c fruits_bonus.c images_bonus.c image_utils_bonus.c \
 		mouvements_bonus.c ghost_movement_bonus.c ghost_movement_utils_bonus.c \
 		line_queue_bonus.c map_validator_bonus.c map_validator_helpers_bonus.c map_bonus.c depth_first_search_bonus.c \
 		depth_first_search_utils_bonus.c parsing_bonus.c \

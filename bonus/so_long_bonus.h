@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 16:53:07 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 19:18:05 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,6 @@ typedef struct s_images
 	void						*collectible;
 	void						*exit;
 	void						*empty;
-	void						*img_log;
-	void						*game_over;
-	void						*win;
 	void						*exit1;
 	void						*exit2;
 }								t_images;
@@ -113,6 +110,7 @@ typedef struct s_params
 
 // player_bonus.c
 void							init_and_load_player(t_params *params);
+void							draw_player(t_params *params);
 void							find_player_and_exit_position(t_params *params);
 void							check_ghost_collision(t_params *params);
 void							check_fruit_collision(t_params *params);
@@ -129,6 +127,10 @@ void							draw_fruits(t_params *params);
 // images_bonus.c
 void							load_images(t_params *params);
 void							draw_images(t_params *params);
+
+// image_utils_bonus.c
+void							check_image_load_status(t_params *params);
+void							destroy_images(t_params *params);
 
 // parsing_bonus.c
 void							parse_map_data(t_params *params);
@@ -211,5 +213,6 @@ int								handle_arguments(int argc, char **argv,
 									t_params *params);
 int								validate_and_parse_arguments(int argc,
 									char **argv, t_params *params);
+void							free_and_destroy(t_params *params);
 
 #endif // SO_LONG_BONUS_H

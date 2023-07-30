@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 07:45:38 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 14:36:46 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 19:06:31 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	parse_map(t_params *params)
 	fd = open(params->map.map_file, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_printf("Error: Invalid map file.\n");
+		ft_printf("Error\n❌ Invalid map file. ❌ \n");
 		close(fd);
 		return (0);
 	}
@@ -97,6 +97,8 @@ void	free_map(t_map *map)
 {
 	int	i;
 
+	if (map->data == NULL)
+		return ;
 	i = 0;
 	while (i < map->rows)
 	{
@@ -104,4 +106,5 @@ void	free_map(t_map *map)
 		i++;
 	}
 	free(map->data);
+	map->data = NULL;
 }

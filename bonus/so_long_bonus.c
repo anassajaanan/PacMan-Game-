@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 16:53:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 19:18:35 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ int	handle_keypress(int keycode, t_params *params)
 
 int	handle_window_close(t_params *params)
 {
-	mlx_destroy_window(params->mlx, params->win);
+	free_and_destroy(params);
 	exit(0);
-	return (0);
 }
 
 int	update_window(t_params *params)
@@ -42,21 +41,19 @@ int	update_window(t_params *params)
 	if (params->is_win && params->player.col == params->exit.col
 		&& params->player.row == params->exit.row)
 	{
-		mlx_destroy_window(params->mlx, params->win);
+		free_and_destroy(params);
+		ft_printf("You win! 🎉\n");
 		exit(0);
-		return (0);
 	}
 	if (params->is_game_over)
 	{
-		mlx_destroy_window(params->mlx, params->win);
+		free_and_destroy(params);
+		ft_printf("Game over! 😢\n");
 		exit(0);
-		return (0);
 	}
 	mlx_clear_window(params->mlx, params->win);
 	draw_images(params);
-	mlx_put_image_to_window(params->mlx, params->win,
-		params->player.img[params->player.direction], params->player.col * 32,
-		params->player.row * 32);
+	draw_player(params);
 	draw_fruits(params);
 	draw_ghosts(params);
 	move_ghosts(params);
@@ -74,20 +71,17 @@ int	main(int argc, char **argv)
 		params.mlx = mlx_init();
 		params.win = mlx_new_window(params.mlx, params.map.cols * 32,
 				params.map.rows * 32, "so_long");
-		params.is_game_over = 0;
-		params.is_win = 0;
+		init_ghosts(&params);
 		init_and_load_player(&params);
 		init_and_load_fruits(&params);
 		load_images(&params);
-		init_and_load_fruits(&params);
-		init_ghosts(&params);
 		load_ghosts_imgs(&params);
+		check_image_load_status(&params);
 		mlx_hook(params.win, 2, 1L << 0, handle_keypress, &params);
 		mlx_hook(params.win, 17, 1L << 17, handle_window_close, &params);
 		mlx_loop_hook(params.mlx, update_window, &params);
 		mlx_loop(params.mlx);
 	}
-	if (params.map.data)
-		free_map(&params.map);
-	return (0);
+	free_map(&params.map);
+	exit(0);
 }

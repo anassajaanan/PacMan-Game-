@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:13:50 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 15:06:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 19:14:52 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ void	check_image_load_status(t_params *params)
 	{
 		ft_printf("Error\n❌ Failed to load one or more images. ❌ \n");
 		free_and_destroy(params);
+		exit(1);
 	}
 }
