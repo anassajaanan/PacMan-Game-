@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 14:13:50 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 09:03:40 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:59:00 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ void	load_images(t_params *params)
 			"./textures/images/collectible.xpm", &width, &height);
 	params->images.empty = mlx_xpm_file_to_image(params->mlx,
 			"./textures/images/empty.xpm", &width, &height);
-	params->images.img_log = mlx_xpm_file_to_image(params->mlx,
-			"./textures/images/42.xpm", &width, &height);
-	params->images.game_over = mlx_xpm_file_to_image(params->mlx,
-			"./textures/images/game_over.xpm", &width, &height);
-	params->images.win = mlx_xpm_file_to_image(params->mlx,
-			"./textures/images/win.xpm", &width, &height);
 	params->images.exit1 = mlx_xpm_file_to_image(params->mlx,
 			"./textures/images/exit1.xpm", &width, &height);
 	params->images.exit2 = mlx_xpm_file_to_image(params->mlx,

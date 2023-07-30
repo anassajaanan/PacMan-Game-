@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:32:31 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:58:23 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ typedef struct s_images
 	void						*collectible;
 	void						*exit;
 	void						*empty;
-	void						*img_log;
-	void						*game_over;
-	void						*win;
 	void						*exit1;
 	void						*exit2;
 }								t_images;
@@ -84,7 +81,6 @@ typedef struct s_params
 	t_player					player;
 	t_exit						exit;
 	t_images					images;
-	int							is_game_over;
 	int							is_win;
 }								t_params;
 
@@ -151,10 +147,6 @@ int								has_valid_path(t_params *params);
 
 // game_utils.c
 void							display_score_and_moves(t_params *params);
-void							get_random_collectible_position(
-									t_params *params, int *col, int *row);
-void							display_win_screen(t_params *params);
-void							display_game_over(t_params *params);
 
 // depth_first_search_utils.c
 void							init_position(int array[2], int x, int y);

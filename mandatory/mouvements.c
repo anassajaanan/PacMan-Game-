@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:19:35 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:32:08 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:39:15 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	move_player_up(t_params *params)
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
 		usleep(ANIMATION_DELAY);
-		if (params->player.score >= params->map.collectibles * 10 + 1600)
+		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
 	}
 }
@@ -61,7 +61,7 @@ void	move_player_left(t_params *params)
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
 		usleep(ANIMATION_DELAY);
-		if (params->player.score >= params->map.collectibles * 10 + 1600)
+		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
 	}
 }
@@ -82,7 +82,7 @@ void	move_player_down(t_params *params)
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
 		usleep(ANIMATION_DELAY);
-		if (params->player.score >= params->map.collectibles * 10 + 1600)
+		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
 	}
 }
@@ -103,7 +103,7 @@ void	move_player_right(t_params *params)
 			params->player.animation_img, params->player.col * 32,
 			params->player.row * 32);
 		usleep(ANIMATION_DELAY);
-		if (params->player.score >= params->map.collectibles * 10 + 1600)
+		if (params->player.score == params->map.collectibles * 10)
 			params->is_win = 1;
 	}
 }

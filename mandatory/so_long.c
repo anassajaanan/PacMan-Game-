@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 10:31:26 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 10:57:39 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,8 @@ int	update_window(t_params *params)
 	if (params->is_win && params->player.col == params->exit.col
 		&& params->player.row == params->exit.row)
 	{
-		display_win_screen(params);
-		return (0);
-	}
-	if (params->is_game_over)
-	{
-		display_game_over(params);
+		mlx_destroy_window(params->mlx, params->win);
+		exit(0);
 		return (0);
 	}
 	mlx_clear_window(params->mlx, params->win);
@@ -68,8 +64,6 @@ int	main(int argc, char **argv)
 		params.mlx = mlx_init();
 		params.win = mlx_new_window(params.mlx, params.map.cols * 32,
 				params.map.rows * 32, "so_long");
-		params.is_game_over = 0;
-		params.is_win = 0;
 		init_and_load_player(&params);
 		load_images(&params);
 		mlx_hook(params.win, 2, 1L << 0, handle_keypress, &params);
