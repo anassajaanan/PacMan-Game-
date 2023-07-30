@@ -1,8 +1,7 @@
 NAME =	so_long
 
 SRCS =	so_long_bonus.c game_utils_bonus.c player_bonus.c ghosts_bonus.c fruits_bonus.c images_bonus.c \
-		mouvements_bonus.c ghost_movement_bonus.c red_ghost_movement_bonus.c blue_ghost_algorithm_bonus.c \
-		ghost_movement_utils1_bonus.c ghost_movement_utils2_bonus.c \
+		mouvements_bonus.c ghost_movement_bonus.c ghost_movement_utils_bonus.c \
 		line_queue_bonus.c map_validator_bonus.c map_validator_helpers_bonus.c map_bonus.c depth_first_search_bonus.c \
 		depth_first_search_utils_bonus.c parsing_bonus.c \
 		get_next_line/get_next_line.c \
@@ -19,6 +18,8 @@ ${NAME} : ${OBJS}
 		@make -C ./ft_printf
 		@make -C ./mlx
 		${CC} ${CFLAGS} ${OBJS} -L./libft -lft -L./mlx -lmlx -L./ft_printf -lftprintf -framework OpenGL -framework AppKit -o ${NAME}
+
+bonus : ${NAME}
 
 clean :
 		@make clean -C ./libft

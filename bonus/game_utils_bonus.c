@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 13:07:41 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 14:36:04 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 16:30:39 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,4 @@ void	get_random_collectible_position(t_params *params, int *col, int *row)
 	}
 	*col = new_col;
 	*row = new_row;
-}
-
-void	display_win_screen(t_params *params)
-{
-	mlx_clear_window(params->mlx, params->win);
-	mlx_put_image_to_window(params->mlx, params->win, params->images.win, 0, 0);
-}
-
-void	display_game_over(t_params *params)
-{
-	mlx_clear_window(params->mlx, params->win);
-	mlx_put_image_to_window(params->mlx, params->win, params->images.game_over,
-		0, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:34:39 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 14:36:29 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 17:02:17 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	init_ghosts(t_params *params)
 {
 	get_random_collectible_position(params, &params->red.col, &params->red.row);
-	params->red.direction = 0;
+	params->red.direction = 1;
 	get_random_collectible_position(params, &params->blue.col,
 		&params->blue.row);
 	params->blue.direction = 1;

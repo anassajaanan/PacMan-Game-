@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 14:37:29 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 16:53:40 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,14 @@ int	update_window(t_params *params)
 	if (params->is_win && params->player.col == params->exit.col
 		&& params->player.row == params->exit.row)
 	{
-		display_win_screen(params);
+		mlx_destroy_window(params->mlx, params->win);
+		exit(0);
 		return (0);
 	}
 	if (params->is_game_over)
 	{
-		display_game_over(params);
+		mlx_destroy_window(params->mlx, params->win);
+		exit(0);
 		return (0);
 	}
 	mlx_clear_window(params->mlx, params->win);
@@ -57,10 +59,7 @@ int	update_window(t_params *params)
 		params->player.row * 32);
 	draw_fruits(params);
 	draw_ghosts(params);
-	move_pink_ghost(params);
-	move_yellow_ghost(params);
-	move_blue_ghost(params);
-	move_red_ghost(params);
+	move_ghosts(params);
 	display_score_and_moves(params);
 	check_ghost_collision(params);
 	return (0);
@@ -70,7 +69,6 @@ int	main(int argc, char **argv)
 {
 	t_params	params;
 
-	params.map.data = NULL;
 	if (validate_and_parse_arguments(argc, argv, &params))
 	{
 		params.mlx = mlx_init();

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 14:38:27 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 16:53:07 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,29 +111,29 @@ typedef struct s_params
 	int							is_win;
 }								t_params;
 
-// player.c
+// player_bonus.c
 void							init_and_load_player(t_params *params);
 void							find_player_and_exit_position(t_params *params);
 void							check_ghost_collision(t_params *params);
 void							check_fruit_collision(t_params *params);
 
-// ghosts.c
+// ghosts_bonus.c
 void							init_ghosts(t_params *params);
 void							load_ghosts_imgs(t_params *params);
 void							draw_ghosts(t_params *params);
 
-// fruits.c
+// fruits_bonus.c
 void							init_and_load_fruits(t_params *params);
 void							draw_fruits(t_params *params);
 
-// images.c
+// images_bonus.c
 void							load_images(t_params *params);
 void							draw_images(t_params *params);
 
-// parsing.c
+// parsing_bonus.c
 void							parse_map_data(t_params *params);
 
-// mouvements.c
+// mouvements_bonus.c
 int								is_valid_mov(t_params *params, int row,
 									int col);
 void							move_player_up(t_params *params);
@@ -141,48 +141,28 @@ void							move_player_left(t_params *params);
 void							move_player_down(t_params *params);
 void							move_player_right(t_params *params);
 
-// ghost_movement.c
+// ghost_movement_bonus.c
 void							move_pink_ghost(t_params *params);
 void							move_yellow_ghost(t_params *params);
-
-// red_ghost_movement.c
-int								choose_valid_direction_red(t_params *params,
-									int new_col, int new_row, int direction);
-void							move_red_ghost_random(t_params *params);
-void							move_red_ghost_continue(t_params *params);
+void							move_blue_ghost(t_params *params);
 void							move_red_ghost(t_params *params);
 
-// blue_ghost_movement.c
-int								choose_valid_direction_blue(t_params *params,
-									int new_col, int new_row, int direction);
-void							move_blue_ghost_random(t_params *params);
-void							move_blue_ghost_continue(t_params *params);
-void							move_blue_ghost(t_params *params);
+// ghost_movement_utils_bonus.c
+void							move_pink(t_params *params);
+void							move_yellow(t_params *params);
+void							move_blue(t_params *params);
+void							move_red(t_params *params);
+void							move_ghosts(t_params *params);
 
-// ghost_movement_utils1.c
 
-int								get_opposite_direction(int direction);
-void							get_available_directions(
-									int *available_directions, int direction);
-int								is_valid_move(t_params *params, int row,
-									int col, int direction);
-void							check_move(t_params *params, int direction,
-									int *new_row, int *new_col);
-int								has_multiple_options(t_params *params, int row,
-									int col);
-
-// ghost_movement_utils2.c
-void							shuffle(int *array, int n);
-void							init_directions(int directions[4]);
-
-// line_queue.c
+// line_queue_bonus.c
 void							init_line_queue(t_line_queue *q);
 void							enqueue_line(t_line_queue *q, char *line);
 char							*dequeue_line(t_line_queue *q);
 int								line_queue_is_empty(t_line_queue *q);
 int								line_queue_size(t_line_queue *q);
 
-// map_validator.c
+// map_validator_bonus.c
 int								has_duplicates(t_map *map);
 int								is_map_rectangular(t_map *map);
 int								is_map_closed_by_walls(t_map *map);
@@ -190,14 +170,14 @@ int								has_valid_path_to_collectibles(
 									t_params *params);
 int								validate_map(t_params *params);
 
-// map_validator_utils.c
+// map_validator_utils_bonus.c
 int								is_valid_character(char c);
 int								count_charcters(t_map *map, char c);
 int								is_row_only_walls(char *row);
 int								is_valid_map_format(t_map *map);
 int								is_valid_map(t_map *map);
 
-// map.c
+// map_bonus.c
 void							init_map(t_map *map);
 void							parse_map_from_queue(t_line_queue *q,
 									t_map *map);
@@ -205,7 +185,7 @@ int								parse_map(t_params *params);
 int								count_collectibles(t_map *map);
 void							free_map(t_map *map);
 
-// depth_first_search.c
+// depth_first_search_bonus.c
 int								is_visited(int **visited, int *index, int col,
 									int row);
 void							mark_visited(int **visited, int *index, int col,
@@ -216,19 +196,17 @@ int								depth_first_search(t_map *map, int *current_pos,
 									int **visited, int *index);
 int								has_valid_path(t_params *params);
 
-// game_utils.c
+// game_utils_bonus.c
 void							display_score_and_moves(t_params *params);
 void							get_random_collectible_position(
 									t_params *params, int *col, int *row);
-void							display_win_screen(t_params *params);
-void							display_game_over(t_params *params);
 
-// depth_first_search_utils.c
+// depth_first_search_utils_bonus.c
 void							init_position(int array[2], int x, int y);
 int								**allocate_visited(t_params *params);
 void							free_visited(t_params *params, int **visited);
 
-// parsing.c
+// parsing_bonus.c
 int								handle_arguments(int argc, char **argv,
 									t_params *params);
 int								validate_and_parse_arguments(int argc,
