@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 18:54:47 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 13:44:06 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 15:10:27 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,31 @@ int	validate_and_parse_arguments(int argc, char **argv, t_params *params)
 		return (1);
 	else
 		return (0);
+}
+
+void	free_and_destroy(t_params *params)
+{
+	if (params->images.wall)
+		mlx_destroy_image(params->mlx, params->images.wall);
+	if (params->images.collectible)
+		mlx_destroy_image(params->mlx, params->images.collectible);
+	if (params->images.empty)
+		mlx_destroy_image(params->mlx, params->images.empty);
+	if (params->images.exit1)
+		mlx_destroy_image(params->mlx, params->images.exit1);
+	if (params->images.exit2)
+		mlx_destroy_image(params->mlx, params->images.exit2);
+	if (params->player.animation_img)
+		mlx_destroy_image(params->mlx, params->player.animation_img);
+	if (params->player.img[0])
+		mlx_destroy_image(params->mlx, params->player.img[0]);
+	if (params->player.img[1])
+		mlx_destroy_image(params->mlx, params->player.img[1]);
+	if (params->player.img[2])
+		mlx_destroy_image(params->mlx, params->player.img[2]);
+	if (params->player.img[3])
+		mlx_destroy_image(params->mlx, params->player.img[3]);
+	mlx_destroy_window(params->mlx, params->win);
+	free_map(&params->map);
+	exit(0);
 }

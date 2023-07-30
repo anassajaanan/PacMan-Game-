@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 14:08:31 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/30 15:06:50 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,9 @@ void							check_image_load_status(t_params *params);
 
 // parsing.c
 void							parse_map_data(t_params *params);
+int								validate_and_parse_arguments(int argc,
+									char **argv, t_params *params);
+void							free_and_destroy(t_params *params);
 
 // mouvements.c
 int								is_valid_mov(t_params *params, int row,
