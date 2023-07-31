@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 18:54:47 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 18:07:51 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/31 07:06:13 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int	handle_arguments(int argc, char **argv, t_params *params)
 	if (stat(params->map.map_file, &file_stat) != 0
 		|| !S_ISREG(file_stat.st_mode))
 	{
-		ft_printf("Error\n❌ The specified map file '%s' is not a regular file. ❌ \n",
+		ft_printf("Error\n❌ The specified map file '%s' is not a regular \
+file. ❌ \n",
 			map_file);
 		return (0);
 	}

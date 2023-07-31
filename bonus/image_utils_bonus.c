@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 17:21:35 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 18:00:35 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/31 07:08:14 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 void	check_image_load_status(t_params *params)
 {
 	if (!params->images.wall || !params->images.collectible
-	|| !params->images.empty || !params->images.exit1
-	|| !params->images.exit2 || !params->player.img[0]
-	|| !params->player.img[1] || !params->player.img[2]
-	|| !params->player.img[3] || !params->player.animation_img
-	|| !params->apple.img || !params->orange.img
-	|| !params->cherry.img || !params->strawberry.img
-	|| !params->red.img[0] || !params->red.img[1]
-	|| !params->red.img[2] || !params->red.img[3]
-	|| !params->pink.img[0] || !params->pink.img[1]
-	|| !params->pink.img[2] || !params->pink.img[3]
-	|| !params->yellow.img[0] || !params->yellow.img[1]
-	|| !params->yellow.img[2] || !params->yellow.img[3]
-	|| !params->blue.img[0] || !params->blue.img[1]
-	|| !params->blue.img[2] || !params->blue.img[3])
+		|| !params->images.empty || !params->images.exit1
+		|| !params->images.exit2 || !params->player.img[0]
+		|| !params->player.img[1] || !params->player.img[2]
+		|| !params->player.img[3] || !params->player.animation_img
+		|| !params->apple.img || !params->orange.img
+		|| !params->cherry.img || !params->strawberry.img
+		|| !params->red.img[0] || !params->red.img[1]
+		|| !params->red.img[2] || !params->red.img[3]
+		|| !params->pink.img[0] || !params->pink.img[1]
+		|| !params->pink.img[2] || !params->pink.img[3]
+		|| !params->yellow.img[0] || !params->yellow.img[1]
+		|| !params->yellow.img[2] || !params->yellow.img[3]
+		|| !params->blue.img[0] || !params->blue.img[1]
+		|| !params->blue.img[2] || !params->blue.img[3])
 	{
 		ft_printf("Error\n❌ Failed to load one or more images. ❌ \n");
 		free_and_destroy(params);

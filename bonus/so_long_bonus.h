@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 19:18:05 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/31 07:05:21 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,6 @@ void							move_yellow(t_params *params);
 void							move_blue(t_params *params);
 void							move_red(t_params *params);
 void							move_ghosts(t_params *params);
-
 
 // line_queue_bonus.c
 void							init_line_queue(t_line_queue *q);

@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:10 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 19:18:35 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/31 07:04:29 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	handle_keypress(int keycode, t_params *params)
 {
 	if (keycode == 53)
 	{
-		mlx_destroy_window(params->mlx, params->win);
+		free_and_destroy(params);
 		exit(0);
 	}
 	else if (keycode == 13 || keycode == 126)
@@ -43,6 +43,8 @@ int	update_window(t_params *params)
 	{
 		free_and_destroy(params);
 		ft_printf("You win! 🎉\n");
+		ft_printf("Your score is %d\n", params->player.score);
+		ft_printf("You made %d moves\n", params->player.moves);
 		exit(0);
 	}
 	if (params->is_game_over)
