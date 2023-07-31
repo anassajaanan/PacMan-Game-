@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 12:27:21 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/30 15:06:50 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/31 08:02:15 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct s_images
 {
 	void						*wall;
 	void						*collectible;
-	void						*exit;
 	void						*empty;
 	void						*exit1;
 	void						*exit2;
