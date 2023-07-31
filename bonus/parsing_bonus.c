@@ -6,7 +6,7 @@
 /*   By: aajaanan <aajaanan@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 18:54:47 by aajaanan          #+#    #+#             */
-/*   Updated: 2023/07/31 07:06:13 by aajaanan         ###   ########.fr       */
+/*   Updated: 2023/07/31 07:30:24 by aajaanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	handle_arguments(int argc, char **argv, t_params *params)
 
 	if (argc != 2)
 	{
-		ft_printf("Usage: %s [map_file.ber]\n", argv[0]);
+		ft_printf("Error\nUsage: %s [map_file.ber]\n", argv[0]);
 		return (0);
 	}
 	map_file = argv[1];
