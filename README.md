@@ -21,7 +21,7 @@ The So_Long project is part of the 42 School curriculum and is designed to intro
 In this specific implementation, we have chosen to create a game inspired by the classic arcade game "PacMan." The player controls PacMan, a character that moves around a maze, eating collectibles (dots) while being pursued by ghost enemies. The objective is to clear all the collectibles in the maze without getting caught by the ghosts.
 
 
-![pac_man.png](./Readme/pac_man.png)
+![pac_man.png](./Readme/pacman.png)
 
 ![game_over.png](./Readme/win.png)
 
